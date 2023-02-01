@@ -1,0 +1,22 @@
+﻿@using System.Security.Cryptography
+@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    My Company Address
+  <h1>@HttpContext.Current.Request["Showme"]</h1> 
+    @{
+        if(!Request.QueryString["Showme"].IsEmpty() ) {
+            <h1>yess we got a value @Request.QueryString["Showme"].ToString() !</h1>
+            Request.QueryString["Showme"].Remove(2);
+            <h1>yess we got another value @Request.QueryString["Showme"].Remove(2) !</h1>
+        }
+        else
+        {<h1>yesss</h1>
+            
+        }
+    }
+</address>

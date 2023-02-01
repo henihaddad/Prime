@@ -1,0 +1,8 @@
+@using WebApplication1.Models
+@model PrimeGenerator
+@using System.Text
+@{
+    <h1>@Model.N</h1>
+    string content = File.ReadAllText(@Model.OutputPath, Encoding.UTF8);
+    <h1 style="color: #3c763d">@content</h1>
+}

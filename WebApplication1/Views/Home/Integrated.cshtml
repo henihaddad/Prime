@@ -1,0 +1,35 @@
+@using System.Text
+@using WebApplication1.Models
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form>
+        <input type="text" name="ShowMe" ><br/>
+        <input type="Submit" value="ShowItToMe"><br/>
+    </form>
+</div>
+@{
+    if (!Request.QueryString["ShowMe"].IsEmpty())
+    {
+        string s = @Request.QueryString["ShowMe"];
+        <h1>@s</h1>
+        int n=Int32.Parse(s);
+        <h1>@n</h1>
+        PrimeGenerator p = new PrimeGenerator();
+        p.N = n;
+        p.LaunchCommandLineApp();
+        string content = File.ReadAllText(p.OutputPath, Encoding.UTF8);
+        <h1 style="color: #3c763d">@content</h1>
+    }
+    
+}
+
+
+
+</body>
+</html>

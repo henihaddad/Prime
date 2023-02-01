@@ -1,0 +1,28 @@
+@using System.Text
+@using WebApplication1.Models
+@model PrimeGenerator
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <title>Title</title>
+</head>
+<body>
+@using (Html.BeginForm("Result", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+   
+
+    <div class="form-group">
+         @Html.LabelFor(model => model.N, htmlAttributes: new { @class = "control-label" })
+         @Html.EditorFor(model => model.N, new { htmlAttributes = new { @class = "form-control" } })
+         @Html.ValidationMessageFor(model => model.N, "", new { @class = "text-danger" })
+    </div>
+    <div>
+        <input type="submit" value="Submit event" class="btn btn-default button clickable"/>
+        
+    </div>
+}
+
+</body>
+</html>

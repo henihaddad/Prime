@@ -1,0 +1,41 @@
+﻿@using System.Diagnostics
+@using System.Text
+@using WebApplication1.Models
+@{
+    ViewBag.Title = "About";
+   // ViewBag.
+}
+<h2>@ViewBag.Title.</h2>
+<h1>I am hani haddad</h1>
+<h3>@ViewBag.Message</h3>
+
+
+
+
+@{
+    bool premier(int n)
+    {
+        for (int i = 2; i < n; i++)
+        {
+            if (n % i == 0){ return false;}
+            
+        }
+        return true;
+    }
+
+    
+}
+@{
+    
+    for (int i = 2; i < 5; i++)
+    {
+        if (premier(i))
+        {
+            <h1>@i est premier</h1>
+        }
+       // <h1>yess it iss !</h1>
+    }
+}
+
+<p>Use this area to provide additional information.</p>
+<h1>final result </h1>
